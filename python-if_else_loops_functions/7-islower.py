@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-def islower(a):
-    ascii_value = ord(a)
+def islower(c):
+    ascii_value = ord(c)
         return 97 <= ascii_value <= 122
 
