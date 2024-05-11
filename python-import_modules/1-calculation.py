@@ -6,14 +6,14 @@ b = 5
 
 if __name__ == "__main__":
 
-    add_result = add(a, b)
-    print("{} + {} = {}".format(a, b, add_result))
+    results = add(a, b)
+    print("{} + {} = {}".format(a, b, results))
 
-    sub_result = sub(a, b)
-    print("{} - {} = {}".format(a, b, sub_result))
+    results = sub(a, b)
+    print("{} - {} = {}".format(a, b, results))
 
-    div_result = div(a, b)
-    print("{} / {} = {}".format(a, b, div_result))
+    results = div(a, b)
+    print("{} / {} = {}".format(a, b, results))
 
-    mul_result = mul(a, b)
-    print("{} * {} = {}".format(a, b, mul_result))
+    results = mul(a, b)
+    print("{} * {} = {}".format(a, b, results))
