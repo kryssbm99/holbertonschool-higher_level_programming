@@ -5,7 +5,7 @@ Using ``BaseGeometry``
 ---------------------
 
 Import class from module:
-    >>> BaseGeometry = __import__('base_geometry').BaseGeometry
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 Correct Class Type test:
     >>> bg = BaseGeometry()
