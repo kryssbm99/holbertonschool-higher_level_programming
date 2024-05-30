@@ -25,7 +25,7 @@ Printing a name with only the first name:
 ::
 
     >>> say_my_name("Alice")
-    My name is Alice
+    My name is Alice 
 
 Error Handling
 ==============
@@ -38,6 +38,7 @@ If the first name is not a string:
 
     >>> say_my_name(123, "Doe")
     Traceback (most recent call last):
+    ...
     TypeError: first_name must be a string
 
 If the last name is not a string:
@@ -46,6 +47,7 @@ If the last name is not a string:
 
     >>> say_my_name("John", 456)
     Traceback (most recent call last):
+    ...
     TypeError: last_name must be a string
 
 If both first name and last name are not strings:
@@ -54,4 +56,5 @@ If both first name and last name are not strings:
 
     >>> say_my_name(123, 456)
     Traceback (most recent call last):
+    ...
     TypeError: first_name must be a string
