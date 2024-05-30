@@ -6,16 +6,19 @@ Function Divides all elements of a matrix by a given number.
 
 def matrix_divided(matrix, div):
     """
-    This function takes a matrix (list of lists) of integers or floats and divides all elements by a given number.
+    This function takes a matrix (list of lists) of integers or
+    floats and divides all elements by a given number.
     Each row of the matrix must be of the same size.
     The divisor 'div' must be a non-zero number (integer or float).
     """
 
-    if not isinstance(matrix, list) or not all(isinstance(row, list) for row in matrix):
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
-    
-    row_lengths = set(len(row) for row in matrix)
-    if len(row_lengths) != 1:
+    if not isinstance(matrix, list):
+        raise TypeError("matrix must be a matrix of integers/floats")
+
+    if not all(isinstance(row, list) for row in matrix):
+        raise TypeError("list must be a list of integers/floats")
+
+    if not all(len(row) == len(matrix[0]) for row in matrix):
         raise TypeError("Each row of the matrix must have the same size")
 
     if not isinstance(div, (int, float)):
