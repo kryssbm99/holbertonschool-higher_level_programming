@@ -1,0 +1,58 @@
+==============================
+How to Use 2-matrix_divided.py
+==============================
+
+This module defines the function ``matrix_divided(matrix, div)``.
+
+Usage
+=====
+
+The function ``matrix_divided(...)`` takes a matrix and a divisor as arguments, and returns a new matrix with all elements divided by the divisor.
+
+Basic Examples
+==============
+
+Here are some basic examples of how to use the ``matrix_divided`` function:
+
+Dividing each element of a 2x2 matrix by 2:
+
+::
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+    >>> matrix_divided([[1, 2], [3, 4]], 2)
+    [[0.5, 1.0], [1.5, 2.0]]
+
+Dividing each element of a 3x3 matrix by 3:
+
+::
+
+    >>> matrix_divided([[9, 6, 3], [12, 15, 18], [21, 24, 27]], 3)
+    [[3.0, 2.0, 1.0], [4.0, 5.0, 6.0], [7.0, 8.0, 9.0]]
+
+Error Handling
+==============
+
+The function raises errors for invalid inputs:
+
+If the matrix is not properly formatted:
+
+::
+
+    >>> matrix_divided([[1, 2], [3, 'a']], 2)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+If the divisor is not a number:
+
+::
+
+    >>> matrix_divided([[1, 2], [3, 4]], 'a')
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+If the divisor is zero:
+
+::
+
+    >>> matrix_divided([[1, 2], [3, 4]], 0)
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
