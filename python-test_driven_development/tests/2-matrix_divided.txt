@@ -7,16 +7,15 @@ This module defines the function ``matrix_divided(matrix, div)``.
 Usage
 =====
 
-The function ``matrix_divided(...)`` takes a matrix and a divisor as arguments, and returns a new matrix with all elements divided by the divisor.
+The function ``matrix_divided(matrix, div)`` takes a matrix and a divisor as arguments, and returns a new matrix with all elements divided by the divisor, rounded to 2 decimal places.
 
 Basic Examples
 ==============
 
-Here are some basic examples of how to use the ``matrix_divided`` function:
-
 Dividing each element of a 2x2 matrix by 2:
 
 ::
+
     >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
     >>> matrix_divided([[1, 2], [3, 4]], 2)
     [[0.5, 1.0], [1.5, 2.0]]
@@ -28,18 +27,70 @@ Dividing each element of a 3x3 matrix by 3:
     >>> matrix_divided([[9, 6, 3], [12, 15, 18], [21, 24, 27]], 3)
     [[3.0, 2.0, 1.0], [4.0, 5.0, 6.0], [7.0, 8.0, 9.0]]
 
+Handling floating-point numbers:
+
+::
+
+    >>> matrix_divided([[1.5, 2.5], [3.75, 4.25]], 2)
+    [[0.75, 1.25], [1.88, 2.12]]
+
+Handling negative numbers:
+
+::
+
+    >>> matrix_divided([[-1, -2], [-3, -4]], -1)
+    [[1.0, 2.0], [3.0, 4.0]]
+
+Handling a mix of integers and floats:
+
+::
+
+    >>> matrix_divided([[1, 2.5], [3, 4.75]], 1.5)
+    [[0.67, 1.67], [2.0, 3.17]]
+
+Handling a matrix with single-element lists:
+
+::
+
+    >>> matrix_divided([[1], [2], [3], [4]], 2)
+    [[0.5], [1.0], [1.5], [2.0]]
+
 Error Handling
 ==============
 
 The function raises errors for invalid inputs:
 
-If the matrix is not properly formatted:
+If the matrix is not a list of lists:
+
+::
+
+    >>> matrix_divided(1, 2)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+If the matrix contains non-list elements:
+
+::
+
+    >>> matrix_divided([1, 2, 3], 2)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+If the matrix contains lists with non-integer/float elements:
 
 ::
 
     >>> matrix_divided([[1, 2], [3, 'a']], 2)
     Traceback (most recent call last):
     TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+If the rows in the matrix are not of the same size:
+
+::
+
+    >>> matrix_divided([[1, 2, 3], [4, 5]], 2)
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
 
 If the divisor is not a number:
 
