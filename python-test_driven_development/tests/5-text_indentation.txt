@@ -1,0 +1,47 @@
+==============================
+How to Use 5-text_indentation.py
+==============================
+
+This module defines the function ``text_indentation(text)``.
+
+Usage
+=====
+
+The function ``text_indentation(text)`` prints a text with 2 new lines after each of these characters: ., ? and :.
+
+Basic Examples
+==============
+
+Printing a text with 2 new lines after each ., ? and ::
+
+::
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+    >>> text_indentation("This is a simple test. It has multiple sentences. And some questions: How are you? What is your name?")
+    This is a simple test
+    It has multiple sentences
+
+    And some questions
+    How are you
+
+    What is your name
+
+Printing a text without any ., ? or ::
+
+::
+
+    >>> text_indentation("This is a simple test")
+    This is a simple test
+
+Error Handling
+==============
+
+The function raises an error for invalid inputs:
+
+If the text is not a string:
+
+::
+
+    >>> text_indentation(123)
+    Traceback (most recent call last):
+    TypeError: text must be a string
