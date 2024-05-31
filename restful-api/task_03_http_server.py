@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
-
+from http.server import BaseHTTPRequestHandler, HTTPServer
 
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
     def do_GET(self):
@@ -9,7 +8,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header('Content-type', 'text/plain')
             self.end_headers()
-            self.wfile.write(b'Hello, this is a simple API!')
+            self.wfile.write(b"Hello, this is a simple API!")
         elif self.path == '/data':
             self.send_response(200)
             self.send_header('Content-type', 'application/json')
@@ -20,19 +19,18 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header('Content-type', 'text/plain')
             self.end_headers()
-            self.wfile.write(b'OK')
+            self.wfile.write(b"OK")
         else:
             self.send_response(404)
             self.send_header('Content-type', 'text/plain')
             self.end_headers()
-            self.wfile.write(b'Endpoint not found')
+            self.wfile.write(b"Endpoint not found")
 
-def run():
+def run(server_class=HTTPServer, handler_class=SimpleHTTPRequestHandler):
     server_address = ('', 8000)
-    http = HTTPServer(server_address, SimpleHTTPRequestHandler)
-    print('Starting server...')
-    http.serve_forever()
-
+    httpd = server_class(server_address, handler_class)
+    print('Starting httpd on port 8000...')
+    httpd.serve_forever()
 
 if __name__ == "__main__":
     run()
