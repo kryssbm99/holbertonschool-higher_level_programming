@@ -27,7 +27,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(b'Endpoint not found')
 
-def start():
+def run():
     server_address = ('', 8000)
     http = HTTPServer(server_address, SimpleHTTPRequestHandler)
     print('Starting server...')
@@ -35,4 +35,4 @@ def start():
 
 
 if __name__ == "__main__":
-    start()
+    run()
