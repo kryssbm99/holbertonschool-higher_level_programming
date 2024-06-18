@@ -1,5 +1,7 @@
--- List all shows with genre names (using a single SELECT)
-SELECT t.title, COALESCE(tg.name, NULL) AS genre_name
-FROM `{{ database_name }}`.`tv_shows` AS t
-LEFT JOIN `{{ database_name }}`.`tv_show_genres` AS tg ON t.id = tg.tv_show_id
-ORDER BY t.title ASC, genre_name ASC;
+-- List all Comedy shows (using a single SELECT)
+SELECT tv_shows.title FROM tv_shows
+JOIN tv_show_genres
+ON tv_shows.id = tv_show_genres.show_id
+JOIN tv_genres
+ON tv_genres.id = tv_show_genres.genre_id
+WHERE tv_genres.name = 'Comedy' ORDER BY tv_shows.title;
