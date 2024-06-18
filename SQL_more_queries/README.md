@@ -1,0 +1,1 @@
+Welcome to my SQL more queries basic training
