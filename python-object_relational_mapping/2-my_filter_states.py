@@ -23,9 +23,9 @@ def filter_states_by_name(username, password, dbname, state_name):
     cursor = db.cursor()
 
     # Execute the SQL query
-    query = ("SELECT id, name FROM states WHERE name = '{}' ORDER BY id ASC"
-             .format(state_name))
-    cursor.execute(query)
+    query = ("SELECT id, name FROM states WHERE BINARY name = %s "
+             "ORDER BY id ASC")
+    cursor.execute(query, (state_name,))
 
     # Fetch all the results
     states = cursor.fetchall()
