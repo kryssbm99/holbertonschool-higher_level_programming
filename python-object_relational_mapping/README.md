@@ -1,0 +1,1 @@
+Welcome to my python object relational mapping basic training!
