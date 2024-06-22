@@ -25,7 +25,9 @@ def filter_states_with_a(username, password, dbname):
     session = Session()
 
     # Query all State objects that contain the letter 'a' and order by id
-    states = session.query(State).filter(State.name.like('%a%')).order_by(State.id).all()
+    states = session.query(State).filter(
+        State.name.like('%a%')
+    ).order_by(State.id).all()
 
     # Print each state
     for state in states:
