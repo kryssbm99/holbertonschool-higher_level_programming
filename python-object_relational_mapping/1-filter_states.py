@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-Module to list all states with a name
-starting with 'N' from the database hbtn_0e_0_usa
+Module to list all states with a name starting
+with 'N' from the database hbtn_0e_0_usa
 """
 import MySQLdb
 import sys
@@ -9,8 +9,8 @@ import sys
 
 def filter_states(username, password, dbname):
     """
-    Connects to the database and prints all
-    states with a name starting with 'N' sorted by id.
+    Connects to the database and prints all states with a name
+    starting with 'N' sorted by id.
     """
     # Connect to the MySQL database
     db = MySQLdb.connect(
@@ -23,8 +23,8 @@ def filter_states(username, password, dbname):
     cursor = db.cursor()
 
     # Execute the SQL query
-    cursor.execute
-    ("SELECT id, name FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+    query = "SELECT id, name FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
+    cursor.execute(query)
 
     # Fetch all the results
     states = cursor.fetchall()
