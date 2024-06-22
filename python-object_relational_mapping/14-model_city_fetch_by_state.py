@@ -5,7 +5,7 @@ Module to print all City objects from the database hbtn_0e_14_usa.
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model_state import Base, State
+from model_state import State, Base
 from model_city import City
 
 
@@ -28,11 +28,11 @@ def fetch_cities(username, password, dbname):
     session = Session()
 
     # Query all City objects and order by id
-    cities = session.query(City).join(State).order_by(City.id).all()
+    results = session.query(City, State).join(State).order_by(City.id).all()
 
     # Print each city
-    for city in cities:
-        print(f"{city.state.name}: ({city.id}) {city.name}")
+    for city, state in results:
+        print(f"{state.name}: ({city.id}) {city.name}")
 
     # Close the session
     session.close()
