@@ -23,7 +23,8 @@ def filter_states(username, password, dbname):
     cursor = db.cursor()
 
     # Execute the SQL query
-    cursor.execute("id, name FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+    cursor.execute
+    ("SELECT id, name FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
 
     # Fetch all the results
     states = cursor.fetchall()
