@@ -25,7 +25,7 @@ def filter_states_by_name(username, password, dbname, state_name):
     # Execute the SQL query
     query = ("SELECT id, name FROM states WHERE BINARY name = %s "
              "ORDER BY id ASC".format(state_name))
-    
+
     cursor.execute(query, (state_name,))
 
     # Fetch all the results
