@@ -19,6 +19,28 @@ def read_csv_file(file_path):
             data.append(row)
     return data
 
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+@app.route('/items')
+def items():
+    # Read items from the JSON file
+    with open('items.json', 'r') as f:
+        data = json.load(f)
+    items = data.get('items', [])
+
+    # Render the items.html template with the list of items
+    return render_template('items.html', items=items)
+
 @app.route('/products')
 def products():
     source = request.args.get('source')
