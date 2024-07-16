@@ -1,17 +1,23 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Flask App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     {% include 'header.html' %}
     <h1>Welcome to My Flask App</h1>
     <p>This is a simple Flask application.</p>
-    <ul>
-        <li>Flask</li>
-        <li>HTML</li>
-        <li>Templates</li>
-    </ul>
+    <div class="features">
+        <ul class="feature-list">
+            <li class="feature-item"><i class="fas fa-flask"></i> Flask</li>
+            <li class="feature-item"><i class="fas fa-html5"></i> HTML</li>
+            <li class="feature-item"><i class="fas fa-file-code"></i> Templates</li>
+        </ul>
+    </div>
     {% include 'footer.html' %}
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>

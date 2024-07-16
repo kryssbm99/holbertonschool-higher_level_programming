@@ -1,20 +1,28 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Items List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     {% include 'header.html' %}
     <h1>Items List</h1>
-    {% if items %}
-        <ul>
-            {% for item in items %}
-                <li>{{ item }}</li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <p>No items found</p>
-    {% endif %}
+    <div class="items">
+        {% if items %}
+            <ul class="item-list">
+                {% for item in items %}
+                    <li class="item">
+                        <i class="fas fa-box"></i> {{ item }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No items found</p>
+        {% endif %}
+    </div>
     {% include 'footer.html' %}
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
