@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 """
-This module defines a class `Student` with attributes first_name, last_name, and age.
+This module defines a class `Student` with attributes first_name, last_name,
+and age.
 """
+
 
 class Student:
     """Defines a student by first_name, last_name, and age."""
-    
+
     def __init__(self, first_name, last_name, age):
         """Initializes the student with first_name, last_name, and age."""
         self.first_name = first_name

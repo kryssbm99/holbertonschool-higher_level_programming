@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This module defines a class `Student` with attributes first_name, last_name, and age.
+This module defines a class `Student` with attributes first_name,
+last_name, and age.
 """
 
 class Student:
@@ -15,8 +16,8 @@ class Student:
     def to_json(self, attrs=None):
         """Retrieves a dictionary representation of a Student instance.
         
-        If attrs is a list of strings, only attribute names contained in this list must be retrieved.
-        Otherwise, all attributes must be retrieved.
+        If attrs is a list of strings, only attribute names contained in this
+        list must be retrieved. Otherwise, all attributes must be retrieved.
         """
         if isinstance(attrs, list) and all(isinstance(attr, str) for attr in attrs):
             return {key: value for key, value in self.__dict__.items() if key in attrs}
