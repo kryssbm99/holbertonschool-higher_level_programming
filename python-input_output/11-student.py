@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+This module defines a class `Student` with attributes first_name, last_name, and age.
+"""
+
 class Student:
     """Defines a student by first_name, last_name, and age."""
     
